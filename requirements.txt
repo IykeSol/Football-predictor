@@ -1,0 +1,11 @@
+streamlit
+requests
+pandas
+google-generativeai
+scikit-learn
+toml
+soccerdata
+plotly
+numpy
+openpyxl
+duckduckgo_search
