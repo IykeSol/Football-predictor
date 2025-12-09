@@ -81,7 +81,7 @@ df = load_data()
 
 # --- 2. AI ANALYSIS (DETAILED & CRITICAL) ---
 def get_gemini_analysis(home_team, away_team, prediction_text, confidence, home_recent_str, away_recent_str, h2h_str, h2h_avg_goals, h2h_home_win):
-    model_name = "models/gemini-2.0-flash" 
+    model_name = "models/gemini-2.5-flash" 
     
     prompt = f"""
     You are a Senior Football Betting Analyst known for deep tactical breakdowns and finding value where others miss it.
@@ -322,4 +322,5 @@ if st.button("🚀 Generate Prediction", type="primary"):
                     st.markdown("**Performance Metrics:**")
                     st.markdown(big_stat("Home Goals/Game", f"{feats['home_form_goals_for_5']:.2f}"), unsafe_allow_html=True)
                     st.markdown(big_stat("Away Goals/Game", f"{feats['away_form_goals_for_5']:.2f}"), unsafe_allow_html=True)
+
                     st.markdown(big_stat("Defensive Ratio", f"{(feats['home_form_goals_against_5'] - feats['away_form_goals_against_5']):.2f}"), unsafe_allow_html=True)
