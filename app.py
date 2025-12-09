@@ -60,7 +60,7 @@ except:
 # --- 1. LOAD MODEL & DATA ---
 @st.cache_resource
 def load_model():
-    try: return joblib.load("real_data_football_model.pkl")
+    try: return joblib.load("real_data_football_model_compressed.joblib")
     except: return None
 
 @st.cache_data(ttl=3600)
@@ -324,3 +324,4 @@ if st.button("🚀 Generate Prediction", type="primary"):
                     st.markdown(big_stat("Away Goals/Game", f"{feats['away_form_goals_for_5']:.2f}"), unsafe_allow_html=True)
 
                     st.markdown(big_stat("Defensive Ratio", f"{(feats['home_form_goals_against_5'] - feats['away_form_goals_against_5']):.2f}"), unsafe_allow_html=True)
+
